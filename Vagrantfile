@@ -1,21 +1,28 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+# # -*- mode: ruby -*-
+# # vi: set ft=ruby :
 Vagrant.configure("2") do |config|
-  config.vm.define "ragdash" do |ragdash|
-    ragdash.vm.box = "bento/ubuntu-16.04"
-    ragdash.vm.hostname = "rag-dashboard"
-    ragdash.vm.network "forwarded_port", guest:80, host:80
-    ragdash.vm.network "forwarded_port", guest:443, host:443
-    ragdash.vm.network "forwarded_port", guest:3080, host:3080
-    ragdash.vm.provision "shell", path: "scripts/docker.sh"
-    ragdash.vm.synced_folder "~/rag-dashboard/dev/docker", "/home/vagrant/synced/docker", type: "rsync",
-    rsync__exclude: [
-    '.git', 'node_modules'
-    ]
-
-  end
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
-    v.name = "rag-dashboard"
-end
+    v.cpus = 2
+  end
+  # Choose host
+  config.vm.box = "bento/ubuntu-16.04"
+  # Use rsync to sync to vagrant and then to docker
+  config.vm.synced_folder ".", "/sync", type: "rsync",
+  rsync__exclude: [
+    '.git', 'node_modules'
+  ]
+  # provision with docker and docker-compose
+  config.vm.provision :docker
+  # when running docker compose always rebuild and run
+  config.vm.provision :docker_compose,
+    yml: "/sync/docker-compose.yml",
+    rebuild: true,
+    run: "always"
+  # Start automatically Syncing
+  config.gatling.rsync_on_startup = true
+  # forward ports
+  config.vm.network "forwarded_port", guest:80, host:80
+  config.vm.network "forwarded_port", guest:443, host:443
+  config.vm.network "forwarded_port", guest:3080, host:3080
 end

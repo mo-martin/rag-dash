@@ -1,0 +1,6 @@
+app:
+  build: .
+  ports:
+    - "3080:3080"
+  volumes:
+    - /sync/app:/app #/sync is defined in the vagrant file
