@@ -1,11 +1,11 @@
 Bringing machine 'default' up with 'virtualbox' provider...
 ==> default: Importing base box 'bento/ubuntu-16.04'...
-[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+[KProgress: 10%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
 ==> default: Checking if box 'bento/ubuntu-16.04' is up to date...
 ==> default: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
 ==> default: have version '2.2.9'. The latest is version '2.3.0'. Run
 ==> default: `vagrant box update` to update.
-==> default: Setting the name of the VM: deploy_default_1477405915769_44136
+==> default: Setting the name of the VM: deploy_default_1477407242475_18864
 ==> default: Clearing any previously set network interfaces...
 ==> default: Preparing network interfaces based on configuration...
     default: Adapter 1: nat
@@ -61,47 +61,27 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: Status: Downloaded newer image for node:6
     default:  ---> b18ccd36cf1e
     default: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    default:  ---> Running in 7a2a546e62bd
-    default:  ---> d5d9b9498887
-    default: Removing intermediate container 7a2a546e62bd
+    default:  ---> Running in 3e8cba124a56
+    default:  ---> 25a71448c100
+    default: Removing intermediate container 3e8cba124a56
     default: Step 3 : VOLUME /app
-    default:  ---> Running in c11b69a2f498
-    default:  ---> 5ad58d001312
-    default: Removing intermediate container c11b69a2f498
+    default:  ---> Running in 3a8c22c0c75b
+    default:  ---> 58e516572dbf
+    default: Removing intermediate container 3a8c22c0c75b
     default: Step 4 : WORKDIR /app
-    default:  ---> Running in e75f85df388c
-    default:  ---> 498aad442f00
-    default: Removing intermediate container e75f85df388c
+    default:  ---> Running in 338cc90951ae
+    default:  ---> 3671c33e84ca
+    default: Removing intermediate container 338cc90951ae
     default: Step 5 : COPY app/ .
-    default:  ---> 75d9938e94a6
-    default: Removing intermediate container 606ebc0388ff
+    default:  ---> 553dda169dd3
+    default: Removing intermediate container 7f5587d9bbfd
     default: Step 6 : CMD sleep infinity
-    default:  ---> Running in 7e3b73b6deb0
-    default:  ---> 1e7db0c2e565
-    default: Removing intermediate container 7e3b73b6deb0
+    default:  ---> Running in d162690864ec
+    default:  ---> 1c701149db2e
+    default: Removing intermediate container d162690864ec
     default: Step 7 : EXPOSE 3080
-    default:  ---> Running in 2c441afcf0d8
-    default:  ---> 2232b150cbe5
-    default: Removing intermediate container 2c441afcf0d8
-    default: Successfully built 2232b150cbe5
+    default:  ---> Running in 8f4bdf50aa22
+    default:  ---> f74d5a766cbd
+    default: Removing intermediate container 8f4bdf50aa22
+    default: Successfully built f74d5a766cbd
     default: Running docker-compose up...
-==> default: vagrant-gatling-rsync is starting the sync engine because you have at least one rsync folder. To disable this behavior, set `config.gatling.rsync_on_startup = false` in your Vagrantfile.
-==> default: Doing an initial rsync...
-==> default: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> default:   - Exclude: [".vagrant/", ".git", "node_modules"]
-==> default: Watching: /Users/mom24/rag-dashboard/deploy
-==> default: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> default:   - Exclude: [".vagrant/", ".git", "node_modules"]
-==> default: 03:35:18 PM: The rsync operation completed in 294.662 milliseconds.
-==> default: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> default:   - Exclude: [".vagrant/", ".git", "node_modules"]
-==> default: 03:35:54 PM: The rsync operation completed in 297.36400000000003 milliseconds.
-==> default: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> default:   - Exclude: [".vagrant/", ".git", "node_modules"]
-==> default: 03:35:58 PM: The rsync operation completed in 300.59599999999995 milliseconds.
-==> default: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> default:   - Exclude: [".vagrant/", ".git", "node_modules"]
-==> default: 03:36:29 PM: The rsync operation completed in 296.445 milliseconds.
-==> default: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> default:   - Exclude: [".vagrant/", ".git", "node_modules"]
-==> default: 03:40:43 PM: The rsync operation completed in 292.62100000000004 milliseconds.
