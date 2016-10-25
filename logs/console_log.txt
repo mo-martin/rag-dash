@@ -1,11 +1,11 @@
 Bringing machine 'default' up with 'virtualbox' provider...
 ==> default: Importing base box 'bento/ubuntu-16.04'...
-[KProgress: 10%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
 ==> default: Checking if box 'bento/ubuntu-16.04' is up to date...
 ==> default: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
 ==> default: have version '2.2.9'. The latest is version '2.3.0'. Run
 ==> default: `vagrant box update` to update.
-==> default: Setting the name of the VM: deploy_default_1477407242475_18864
+==> default: Setting the name of the VM: deploy_default_1477409020218_28942
 ==> default: Clearing any previously set network interfaces...
 ==> default: Preparing network interfaces based on configuration...
     default: Adapter 1: nat
@@ -61,27 +61,19 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: Status: Downloaded newer image for node:6
     default:  ---> b18ccd36cf1e
     default: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    default:  ---> Running in 3e8cba124a56
-    default:  ---> 25a71448c100
-    default: Removing intermediate container 3e8cba124a56
-    default: Step 3 : VOLUME /app
-    default:  ---> Running in 3a8c22c0c75b
-    default:  ---> 58e516572dbf
-    default: Removing intermediate container 3a8c22c0c75b
-    default: Step 4 : WORKDIR /app
-    default:  ---> Running in 338cc90951ae
-    default:  ---> 3671c33e84ca
-    default: Removing intermediate container 338cc90951ae
-    default: Step 5 : COPY app/ .
-    default:  ---> 553dda169dd3
-    default: Removing intermediate container 7f5587d9bbfd
-    default: Step 6 : CMD sleep infinity
-    default:  ---> Running in d162690864ec
-    default:  ---> 1c701149db2e
-    default: Removing intermediate container d162690864ec
-    default: Step 7 : EXPOSE 3080
-    default:  ---> Running in 8f4bdf50aa22
-    default:  ---> f74d5a766cbd
-    default: Removing intermediate container 8f4bdf50aa22
-    default: Successfully built f74d5a766cbd
+    default:  ---> Running in 5a3d12991ef5
+    default:  ---> 5033f641a1e2
+    default: Removing intermediate container 5a3d12991ef5
+    default: Step 3 : WORKDIR /app
+    default:  ---> Running in 6c7d6f9be75e
+    default:  ---> cc21c7f9c3e9
+    default: Removing intermediate container 6c7d6f9be75e
+    default: Step 4 : COPY app/ .
+    default:  ---> 6669d2b50b12
+    default: Removing intermediate container 54a30bade16b
+    default: Step 5 : CMD sleep infinity
+    default:  ---> Running in f9c728d371a5
+    default:  ---> d6ab20071cd1
+    default: Removing intermediate container f9c728d371a5
+    default: Successfully built d6ab20071cd1
     default: Running docker-compose up...
