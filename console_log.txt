@@ -1,0 +1,34 @@
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> default: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
+==> default: have version '2.2.9'. The latest is version '2.3.0'. Run
+==> default: `vagrant box update` to update.
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+==> default: Running provisioner: docker_compose...
+    default: Checking for Docker Compose installation...
+    default: Symlinking Docker Compose 1.8.0
+    default: Running docker-compose rm...
+==> default: mesg: ttyname failed: Inappropriate ioctl for device
+    default: No stopped containers
+    default: Running docker-compose build...
+==> default: mesg: ttyname failed: Inappropriate ioctl for device
+==> default: Building app
+    default: Step 1 : FROM node:6
+    default:  ---> b18ccd36cf1e
+    default: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
+    default:  ---> Using cache
+    default:  ---> 5033f641a1e2
+    default: Step 3 : WORKDIR /app
+    default:  ---> Using cache
+    default:  ---> cc21c7f9c3e9
+    default: Step 4 : COPY app/ .
+    default:  ---> Using cache
+    default:  ---> 72e7f9d6a046
+    default: Step 5 : CMD sleep infinity
+    default:  ---> Using cache
+    default:  ---> a830495cbbb1
+    default: Successfully built a830495cbbb1
+    default: Running docker-compose up...
+==> default: mesg: ttyname failed: Inappropriate ioctl for device
+==> default: sync_app_1 is up-to-date
