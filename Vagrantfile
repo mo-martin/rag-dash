@@ -22,7 +22,7 @@ config.vm.define "app" do |app|
     rebuild: true,
     run: "always"
   # Start automatically Syncing
-  app.gatling.rsync_on_startup = true
+  app.gatling.rsync_on_startup = false
   # forward ports
   app.vm.network "forwarded_port", guest:8000, host:8000
 end
@@ -43,7 +43,7 @@ config.vm.define "api" do |api|
     rebuild: true,
     run: "always"
   # Start automatically Syncing
-  api.gatling.rsync_on_startup = true
+  api.gatling.rsync_on_startup = false
   # forward ports
   api.vm.network "forwarded_port", guest:3080, host:3080
 end
