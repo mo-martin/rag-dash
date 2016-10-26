@@ -1,79 +1,302 @@
-Bringing machine 'default' up with 'virtualbox' provider...
-==> default: Importing base box 'bento/ubuntu-16.04'...
-[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
-==> default: Checking if box 'bento/ubuntu-16.04' is up to date...
-==> default: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
-==> default: have version '2.2.9'. The latest is version '2.3.0'. Run
-==> default: `vagrant box update` to update.
-==> default: Setting the name of the VM: deploy_default_1477409020218_28942
-==> default: Clearing any previously set network interfaces...
-==> default: Preparing network interfaces based on configuration...
-    default: Adapter 1: nat
-==> default: You are trying to forward to privileged ports (ports <= 1024). Most
-==> default: operating systems restrict this to only privileged process (typically
-==> default: processes running as an administrative user). This is a warning in case
-==> default: the port forwarding doesn't work. If any problems occur, please try a
-==> default: port higher than 1024.
-==> default: Forwarding ports...
-    default: 80 (guest) => 80 (host) (adapter 1)
-    default: 443 (guest) => 443 (host) (adapter 1)
-    default: 3080 (guest) => 3080 (host) (adapter 1)
-    default: 22 (guest) => 2222 (host) (adapter 1)
-==> default: Running 'pre-boot' VM customizations...
-==> default: Booting VM...
-==> default: Waiting for machine to boot. This may take a few minutes...
-    default: SSH address: 127.0.0.1:2222
-    default: SSH username: vagrant
-    default: SSH auth method: private key
-    default: 
-    default: Vagrant insecure key detected. Vagrant will automatically replace
-    default: this with a newly generated keypair for better security.
-    default: 
-    default: Inserting generated public key within guest...
-    default: Removing insecure key from the guest if it's present...
-    default: Key inserted! Disconnecting and reconnecting using new SSH key...
-==> default: Machine booted and ready!
-==> default: Checking for guest additions in VM...
-    default: The guest additions on this VM do not match the installed version of
-    default: VirtualBox! In most cases this is fine, but in rare cases it can
-    default: prevent things such as shared folders from working properly. If you see
-    default: shared folder errors, please make sure the guest additions within the
-    default: virtual machine match the version of VirtualBox you have installed on
-    default: your host and reload your VM.
-    default: 
-    default: Guest Additions Version: 5.0.26
-    default: VirtualBox Version: 5.1
-==> default: Setting hostname...
-==> default: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> default:   - Exclude: [".vagrant/", ".git", "node_modules"]
-==> default: Running provisioner: docker...
-    default: Installing Docker onto machine...
-==> default: Running provisioner: docker_compose...
-    default: Checking for Docker Compose installation...
-    default: Installing Docker Compose 1.8.0
-    default: Symlinking Docker Compose 1.8.0
-    default: Running docker-compose rm...
-    default: No stopped containers
-    default: Running docker-compose build...
-    default: Step 1 : FROM node:6
-    default: 6: Pulling from library/node
-    default: Digest: sha256:e2768fdf054f1f74423360c0dd166e7dfdff6ab32aca2e328ed4aa835fe2faf3
-    default: Status: Downloaded newer image for node:6
-    default:  ---> b18ccd36cf1e
-    default: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    default:  ---> Running in 5a3d12991ef5
-    default:  ---> 5033f641a1e2
-    default: Removing intermediate container 5a3d12991ef5
-    default: Step 3 : WORKDIR /app
-    default:  ---> Running in 6c7d6f9be75e
-    default:  ---> cc21c7f9c3e9
-    default: Removing intermediate container 6c7d6f9be75e
-    default: Step 4 : COPY app/ .
-    default:  ---> 6669d2b50b12
-    default: Removing intermediate container 54a30bade16b
-    default: Step 5 : CMD sleep infinity
-    default:  ---> Running in f9c728d371a5
-    default:  ---> d6ab20071cd1
-    default: Removing intermediate container f9c728d371a5
-    default: Successfully built d6ab20071cd1
-    default: Running docker-compose up...
+Bringing machine 'app' up with 'virtualbox' provider...
+Bringing machine 'api' up with 'virtualbox' provider...
+Bringing machine 'test' up with 'virtualbox' provider...
+==> app: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> app: Matching MAC address for NAT networking...
+==> app: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> app: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
+==> app: have version '2.2.9'. The latest is version '2.3.0'. Run
+==> app: `vagrant box update` to update.
+==> app: Setting the name of the VM: deploy_app_1477479681969_58944
+==> app: Clearing any previously set network interfaces...
+==> app: Preparing network interfaces based on configuration...
+    app: Adapter 1: nat
+==> app: Forwarding ports...
+    app: 8000 (guest) => 8000 (host) (adapter 1)
+    app: 22 (guest) => 2222 (host) (adapter 1)
+==> app: Running 'pre-boot' VM customizations...
+==> app: Booting VM...
+==> app: Waiting for machine to boot. This may take a few minutes...
+    app: SSH address: 127.0.0.1:2222
+    app: SSH username: vagrant
+    app: SSH auth method: private key
+    app: 
+    app: Vagrant insecure key detected. Vagrant will automatically replace
+    app: this with a newly generated keypair for better security.
+    app: 
+    app: Inserting generated public key within guest...
+    app: Removing insecure key from the guest if it's present...
+    app: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> app: Machine booted and ready!
+==> app: Checking for guest additions in VM...
+    app: The guest additions on this VM do not match the installed version of
+    app: VirtualBox! In most cases this is fine, but in rare cases it can
+    app: prevent things such as shared folders from working properly. If you see
+    app: shared folder errors, please make sure the guest additions within the
+    app: virtual machine match the version of VirtualBox you have installed on
+    app: your host and reload your VM.
+    app: 
+    app: Guest Additions Version: 5.0.26
+    app: VirtualBox Version: 5.1
+==> app: Setting hostname...
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: Running provisioner: docker...
+    app: Installing Docker onto machine...
+==> app: Running provisioner: docker_compose...
+    app: Checking for Docker Compose installation...
+    app: Installing Docker Compose 1.8.0
+    app: Symlinking Docker Compose 1.8.0
+    app: Running docker-compose rm...
+==> app: mesg: ttyname failed: Inappropriate ioctl for device
+    app: No stopped containers
+    app: Running docker-compose build...
+==> app: mesg: ttyname failed: Inappropriate ioctl for device
+==> app: Building app
+    app: Step 1 : FROM node:6
+    app: 6: Pulling from library/node
+    app: Digest: sha256:57ca6f5fa900ea778394e857c6b1ed37437a526ab54b2fdc41605419ade1a5e7
+    app: Status: Downloaded newer image for node:6
+    app:  ---> ebf2f43db9c3
+    app: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
+    app:  ---> Running in f2def8f59aa9
+    app:  ---> 2c8d1f17577e
+    app: Removing intermediate container f2def8f59aa9
+    app: Step 3 : WORKDIR /app
+    app:  ---> Running in bb2dbac33588
+    app:  ---> 28cec43bd1b0
+    app: Removing intermediate container bb2dbac33588
+    app: Step 4 : COPY app/ .
+    app:  ---> a5297be098d4
+    app: Removing intermediate container b2e8c2337d28
+    app: Step 5 : CMD sleep infinity
+    app:  ---> Running in e495786dbca8
+    app:  ---> 468e7022ee8d
+    app: Removing intermediate container e495786dbca8
+    app: Successfully built 468e7022ee8d
+    app: Running docker-compose up...
+==> app: mesg: ttyname failed: Inappropriate ioctl for device
+==> app: Creating buildapp_app_1
+==> api: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> api: Matching MAC address for NAT networking...
+==> api: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> api: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
+==> api: have version '2.2.9'. The latest is version '2.3.0'. Run
+==> api: `vagrant box update` to update.
+==> api: Setting the name of the VM: deploy_api_1477479759721_13608
+==> api: Fixed port collision for 22 => 2222. Now on port 2200.
+==> api: Clearing any previously set network interfaces...
+==> api: Preparing network interfaces based on configuration...
+    api: Adapter 1: nat
+==> api: Forwarding ports...
+    api: 3080 (guest) => 3080 (host) (adapter 1)
+    api: 22 (guest) => 2200 (host) (adapter 1)
+==> api: Running 'pre-boot' VM customizations...
+==> api: Booting VM...
+==> api: Waiting for machine to boot. This may take a few minutes...
+    api: SSH address: 127.0.0.1:2200
+    api: SSH username: vagrant
+    api: SSH auth method: private key
+    api: 
+    api: Vagrant insecure key detected. Vagrant will automatically replace
+    api: this with a newly generated keypair for better security.
+    api: 
+    api: Inserting generated public key within guest...
+    api: Removing insecure key from the guest if it's present...
+    api: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> api: Machine booted and ready!
+==> api: Checking for guest additions in VM...
+    api: The guest additions on this VM do not match the installed version of
+    api: VirtualBox! In most cases this is fine, but in rare cases it can
+    api: prevent things such as shared folders from working properly. If you see
+    api: shared folder errors, please make sure the guest additions within the
+    api: virtual machine match the version of VirtualBox you have installed on
+    api: your host and reload your VM.
+    api: 
+    api: Guest Additions Version: 5.0.26
+    api: VirtualBox Version: 5.1
+==> api: Setting hostname...
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: Running provisioner: docker...
+    api: Installing Docker onto machine...
+==> api: Running provisioner: docker_compose...
+    api: Checking for Docker Compose installation...
+    api: Installing Docker Compose 1.8.0
+    api: Symlinking Docker Compose 1.8.0
+    api: Running docker-compose rm...
+==> api: mesg: ttyname failed: Inappropriate ioctl for device
+    api: No stopped containers
+    api: Running docker-compose build...
+==> api: mesg: ttyname failed: Inappropriate ioctl for device
+==> api: Building api
+    api: Step 1 : FROM node:6
+    api: 6: Pulling from library/node
+    api: Digest: sha256:57ca6f5fa900ea778394e857c6b1ed37437a526ab54b2fdc41605419ade1a5e7
+    api: Status: Downloaded newer image for node:6
+    api:  ---> ebf2f43db9c3
+    api: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
+    api:  ---> Running in a9aa9416408c
+    api:  ---> 7be98674ea98
+    api: Removing intermediate container a9aa9416408c
+    api: Step 3 : WORKDIR /api
+    api:  ---> Running in e53f573b1b29
+    api:  ---> d248f3bf9954
+    api: Removing intermediate container e53f573b1b29
+    api: Step 4 : COPY api/ .
+    api:  ---> 8361679b3c13
+    api: Removing intermediate container ee785ffdbb10
+    api: Step 5 : CMD sleep infinity
+    api:  ---> Running in ec774357f1b3
+    api:  ---> bba78df72e9e
+    api: Removing intermediate container ec774357f1b3
+    api: Successfully built bba78df72e9e
+    api: Running docker-compose up...
+==> api: mesg: ttyname failed: Inappropriate ioctl for device
+==> api: Creating buildapi_api_1
+==> test: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> test: Matching MAC address for NAT networking...
+==> test: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> test: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
+==> test: have version '2.2.9'. The latest is version '2.3.0'. Run
+==> test: `vagrant box update` to update.
+==> test: Setting the name of the VM: deploy_test_1477479842240_20911
+==> test: Fixed port collision for 22 => 2222. Now on port 2201.
+==> test: Clearing any previously set network interfaces...
+==> test: Preparing network interfaces based on configuration...
+    test: Adapter 1: nat
+==> test: Forwarding ports...
+    test: 22 (guest) => 2201 (host) (adapter 1)
+==> test: Running 'pre-boot' VM customizations...
+==> test: Booting VM...
+==> test: Waiting for machine to boot. This may take a few minutes...
+    test: SSH address: 127.0.0.1:2201
+    test: SSH username: vagrant
+    test: SSH auth method: private key
+    test: 
+    test: Vagrant insecure key detected. Vagrant will automatically replace
+    test: this with a newly generated keypair for better security.
+    test: 
+    test: Inserting generated public key within guest...
+    test: Removing insecure key from the guest if it's present...
+    test: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> test: Machine booted and ready!
+==> test: Checking for guest additions in VM...
+    test: The guest additions on this VM do not match the installed version of
+    test: VirtualBox! In most cases this is fine, but in rare cases it can
+    test: prevent things such as shared folders from working properly. If you see
+    test: shared folder errors, please make sure the guest additions within the
+    test: virtual machine match the version of VirtualBox you have installed on
+    test: your host and reload your VM.
+    test: 
+    test: Guest Additions Version: 5.0.26
+    test: VirtualBox Version: 5.1
+==> test: Setting hostname...
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: Running provisioner: docker...
+    test: Installing Docker onto machine...
+==> test: Running provisioner: docker_compose...
+    test: Checking for Docker Compose installation...
+    test: Installing Docker Compose 1.8.0
+    test: Symlinking Docker Compose 1.8.0
+    test: Running docker-compose rm...
+==> test: mesg: ttyname failed: Inappropriate ioctl for device
+    test: No stopped containers
+    test: Running docker-compose build...
+==> test: mesg: ttyname failed: Inappropriate ioctl for device
+==> test: Building test
+    test: Step 1 : FROM debian:jessie
+    test: jessie: Pulling from library/debian
+    test: Digest: sha256:c1af755d300d0c65bb1194d24bce561d70c98a54fb5ce5b1693beb4f7988272f
+    test: Status: Downloaded newer image for debian:jessie
+    test:  ---> 7b0a06c805e8
+    test: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
+    test:  ---> Running in 519f0bb79a91
+    test:  ---> 02544f6be483
+    test: Removing intermediate container 519f0bb79a91
+    test: Step 3 : WORKDIR /test
+    test:  ---> Running in 5c4027877269
+    test:  ---> c0c613649be5
+    test: Removing intermediate container 5c4027877269
+    test: Step 4 : COPY test/ .
+    test:  ---> b3cc8b27dfcc
+    test: Removing intermediate container 10ee91f48488
+    test: Step 5 : CMD sleep infinity
+    test:  ---> Running in 7681099302ac
+    test:  ---> c098019eeed9
+    test: Removing intermediate container 7681099302ac
+    test: Successfully built c098019eeed9
+    test: Running docker-compose up...
+==> test: mesg: 
+==> test: ttyname failed
+==> test: : 
+==> test: Inappropriate ioctl for device
+==> test: Creating buildtest_test_1
+==> test: vagrant-gatling-rsync is starting the sync engine because you have at least one rsync folder. To disable this behavior, set `config.gatling.rsync_on_startup = false` in your Vagrantfile.
+==> app: Doing an initial rsync...
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: Doing an initial rsync...
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: Doing an initial rsync...
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: Watching: /Users/mom24/rag-dashboard/deploy
+==> api: Watching: /Users/mom24/rag-dashboard/deploy
+==> test: Watching: /Users/mom24/rag-dashboard/deploy
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: 12:14:07 PM: The rsync operation completed in 292.39500000000004 milliseconds.
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: 12:14:08 PM: The rsync operation completed in 309.965 milliseconds.
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: 12:14:08 PM: The rsync operation completed in 308.91 milliseconds.
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: 12:14:10 PM: The rsync operation completed in 303.63800000000003 milliseconds.
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: 12:14:11 PM: The rsync operation completed in 287.845 milliseconds.
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: 12:14:11 PM: The rsync operation completed in 289.44599999999997 milliseconds.
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: 12:15:37 PM: The rsync operation completed in 304.508 milliseconds.
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: 12:15:38 PM: The rsync operation completed in 309.545 milliseconds.
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: 12:15:38 PM: The rsync operation completed in 308.94899999999996 milliseconds.
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: 12:17:27 PM: The rsync operation completed in 312.465 milliseconds.
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: 12:17:27 PM: The rsync operation completed in 285.704 milliseconds.
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: 12:17:28 PM: The rsync operation completed in 296.692 milliseconds.
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: 12:17:30 PM: The rsync operation completed in 294.59000000000003 milliseconds.
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: 12:17:30 PM: The rsync operation completed in 305.544 milliseconds.
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: 12:17:30 PM: The rsync operation completed in 306.045 milliseconds.
+==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> app: 12:17:37 PM: The rsync operation completed in 296.041 milliseconds.
+==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> api: 12:17:37 PM: The rsync operation completed in 288.46 milliseconds.
+==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
+==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> test: 12:17:38 PM: The rsync operation completed in 298.633 milliseconds.
