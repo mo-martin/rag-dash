@@ -48,22 +48,22 @@ config.vm.define "api" do |api|
   api.vm.network "forwarded_port", guest:3080, host:3080
 end
 
-config.vm.define "test" do |test|
-  test.vm.hostname = "rag-dashboard"
-  test.vm.box = "bento/ubuntu-16.04"
-  # Use rsync to sync to vagrant and then to docker
-  test.vm.synced_folder ".", "/sync", type: "rsync",
-  rsync__exclude: [
-    '.git', 'node_modules', '.vagrant'
-  ]
-  # provision with docker and docker-compose
-  test.vm.provision :docker
-  # when running docker compose always rebuild and run
-  test.vm.provision :docker_compose,
-    yml: "/sync/build-test/docker-compose.yml",
-    rebuild: true,
-    run: "always"
-  # Start automatically Syncing
-  test.gatling.rsync_on_startup = true
-end
+# config.vm.define "test" do |test|
+#   test.vm.hostname = "rag-dashboard"
+#   test.vm.box = "bento/ubuntu-16.04"
+#   # Use rsync to sync to vagrant and then to docker
+#   test.vm.synced_folder ".", "/sync", type: "rsync",
+#   rsync__exclude: [
+#     '.git', 'node_modules', '.vagrant'
+#   ]
+#   # provision with docker and docker-compose
+#   test.vm.provision :docker
+#   # when running docker compose always rebuild and run
+#   test.vm.provision :docker_compose,
+#     yml: "/sync/build-test/docker-compose.yml",
+#     rebuild: true,
+#     run: "always"
+#   # Start automatically Syncing
+#   test.gatling.rsync_on_startup = true
+# end
 end
