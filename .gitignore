@@ -4,3 +4,4 @@
 build-api/docker-api/api
 build-app/docker-app/app
 build-test/docker-test/test
+logs

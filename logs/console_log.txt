@@ -2,12 +2,12 @@ Bringing machine 'app' up with 'virtualbox' provider...
 Bringing machine 'api' up with 'virtualbox' provider...
 Bringing machine 'test' up with 'virtualbox' provider...
 ==> app: Importing base box 'bento/ubuntu-16.04'...
-[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> app: Matching MAC address for NAT networking...
+[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> app: Matching MAC address for NAT networking...
 ==> app: Checking if box 'bento/ubuntu-16.04' is up to date...
 ==> app: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
 ==> app: have version '2.2.9'. The latest is version '2.3.0'. Run
 ==> app: `vagrant box update` to update.
-==> app: Setting the name of the VM: deploy_app_1477479681969_58944
+==> app: Setting the name of the VM: deploy_app_1477485602225_82121
 ==> app: Clearing any previously set network interfaces...
 ==> app: Preparing network interfaces based on configuration...
     app: Adapter 1: nat
@@ -59,21 +59,21 @@ Bringing machine 'test' up with 'virtualbox' provider...
     app: Status: Downloaded newer image for node:6
     app:  ---> ebf2f43db9c3
     app: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    app:  ---> Running in f2def8f59aa9
-    app:  ---> 2c8d1f17577e
-    app: Removing intermediate container f2def8f59aa9
+    app:  ---> Running in c19738c7cdcd
+    app:  ---> 2b11c1aabc36
+    app: Removing intermediate container c19738c7cdcd
     app: Step 3 : WORKDIR /app
-    app:  ---> Running in bb2dbac33588
-    app:  ---> 28cec43bd1b0
-    app: Removing intermediate container bb2dbac33588
+    app:  ---> Running in 9e1b921363ac
+    app:  ---> 09d61a154d5a
+    app: Removing intermediate container 9e1b921363ac
     app: Step 4 : COPY app/ .
-    app:  ---> a5297be098d4
-    app: Removing intermediate container b2e8c2337d28
+    app:  ---> d35dfaead66f
+    app: Removing intermediate container 58ee99568e03
     app: Step 5 : CMD sleep infinity
-    app:  ---> Running in e495786dbca8
-    app:  ---> 468e7022ee8d
-    app: Removing intermediate container e495786dbca8
-    app: Successfully built 468e7022ee8d
+    app:  ---> Running in b6b3363ac361
+    app:  ---> f10c2681a8f2
+    app: Removing intermediate container b6b3363ac361
+    app: Successfully built f10c2681a8f2
     app: Running docker-compose up...
 ==> app: mesg: ttyname failed: Inappropriate ioctl for device
 ==> app: Creating buildapp_app_1
@@ -83,7 +83,7 @@ Bringing machine 'test' up with 'virtualbox' provider...
 ==> api: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
 ==> api: have version '2.2.9'. The latest is version '2.3.0'. Run
 ==> api: `vagrant box update` to update.
-==> api: Setting the name of the VM: deploy_api_1477479759721_13608
+==> api: Setting the name of the VM: deploy_api_1477485682322_58450
 ==> api: Fixed port collision for 22 => 2222. Now on port 2200.
 ==> api: Clearing any previously set network interfaces...
 ==> api: Preparing network interfaces based on configuration...
@@ -136,31 +136,34 @@ Bringing machine 'test' up with 'virtualbox' provider...
     api: Status: Downloaded newer image for node:6
     api:  ---> ebf2f43db9c3
     api: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    api:  ---> Running in a9aa9416408c
-    api:  ---> 7be98674ea98
-    api: Removing intermediate container a9aa9416408c
+    api:  ---> Running in 6b65945473f5
+    api:  ---> a1347e0697b9
+    api: Removing intermediate container 6b65945473f5
     api: Step 3 : WORKDIR /api
-    api:  ---> Running in e53f573b1b29
-    api:  ---> d248f3bf9954
-    api: Removing intermediate container e53f573b1b29
+    api:  ---> Running in b212e7b3a1bc
+    api:  ---> a7aedb4855b5
+    api: Removing intermediate container b212e7b3a1bc
     api: Step 4 : COPY api/ .
-    api:  ---> 8361679b3c13
-    api: Removing intermediate container ee785ffdbb10
+    api:  ---> 285b779842b6
+    api: Removing intermediate container b7c932878a29
     api: Step 5 : CMD sleep infinity
-    api:  ---> Running in ec774357f1b3
-    api:  ---> bba78df72e9e
-    api: Removing intermediate container ec774357f1b3
-    api: Successfully built bba78df72e9e
+    api:  ---> Running in 08928ae3fc64
+    api:  ---> 152d9ea079c1
+    api: Removing intermediate container 08928ae3fc64
+    api: Successfully built 152d9ea079c1
     api: Running docker-compose up...
-==> api: mesg: ttyname failed: Inappropriate ioctl for device
+==> api: mesg: 
+==> api: ttyname failed
+==> api: : 
+==> api: Inappropriate ioctl for device
 ==> api: Creating buildapi_api_1
 ==> test: Importing base box 'bento/ubuntu-16.04'...
-[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> test: Matching MAC address for NAT networking...
+[KProgress: 10%[KProgress: 30%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> test: Matching MAC address for NAT networking...
 ==> test: Checking if box 'bento/ubuntu-16.04' is up to date...
 ==> test: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
 ==> test: have version '2.2.9'. The latest is version '2.3.0'. Run
 ==> test: `vagrant box update` to update.
-==> test: Setting the name of the VM: deploy_test_1477479842240_20911
+==> test: Setting the name of the VM: deploy_test_1477485766217_41937
 ==> test: Fixed port collision for 22 => 2222. Now on port 2201.
 ==> test: Clearing any previously set network interfaces...
 ==> test: Preparing network interfaces based on configuration...
@@ -199,133 +202,13 @@ Bringing machine 'test' up with 'virtualbox' provider...
 ==> test: Running provisioner: docker_compose...
     test: Checking for Docker Compose installation...
     test: Installing Docker Compose 1.8.0
-    test: Symlinking Docker Compose 1.8.0
-    test: Running docker-compose rm...
-==> test: mesg: ttyname failed: Inappropriate ioctl for device
-    test: No stopped containers
-    test: Running docker-compose build...
-==> test: mesg: ttyname failed: Inappropriate ioctl for device
-==> test: Building test
-    test: Step 1 : FROM debian:jessie
-    test: jessie: Pulling from library/debian
-    test: Digest: sha256:c1af755d300d0c65bb1194d24bce561d70c98a54fb5ce5b1693beb4f7988272f
-    test: Status: Downloaded newer image for debian:jessie
-    test:  ---> 7b0a06c805e8
-    test: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    test:  ---> Running in 519f0bb79a91
-    test:  ---> 02544f6be483
-    test: Removing intermediate container 519f0bb79a91
-    test: Step 3 : WORKDIR /test
-    test:  ---> Running in 5c4027877269
-    test:  ---> c0c613649be5
-    test: Removing intermediate container 5c4027877269
-    test: Step 4 : COPY test/ .
-    test:  ---> b3cc8b27dfcc
-    test: Removing intermediate container 10ee91f48488
-    test: Step 5 : CMD sleep infinity
-    test:  ---> Running in 7681099302ac
-    test:  ---> c098019eeed9
-    test: Removing intermediate container 7681099302ac
-    test: Successfully built c098019eeed9
-    test: Running docker-compose up...
-==> test: mesg: 
-==> test: ttyname failed
-==> test: : 
-==> test: Inappropriate ioctl for device
-==> test: Creating buildtest_test_1
-==> test: vagrant-gatling-rsync is starting the sync engine because you have at least one rsync folder. To disable this behavior, set `config.gatling.rsync_on_startup = false` in your Vagrantfile.
-==> app: Doing an initial rsync...
-==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> api: Doing an initial rsync...
-==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> test: Doing an initial rsync...
-==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> app: Watching: /Users/mom24/rag-dashboard/deploy
-==> api: Watching: /Users/mom24/rag-dashboard/deploy
-==> test: Watching: /Users/mom24/rag-dashboard/deploy
-==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> app: 12:14:07 PM: The rsync operation completed in 292.39500000000004 milliseconds.
-==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> api: 12:14:08 PM: The rsync operation completed in 309.965 milliseconds.
-==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> test: 12:14:08 PM: The rsync operation completed in 308.91 milliseconds.
-==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> app: 12:14:10 PM: The rsync operation completed in 303.63800000000003 milliseconds.
-==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> api: 12:14:11 PM: The rsync operation completed in 287.845 milliseconds.
-==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> test: 12:14:11 PM: The rsync operation completed in 289.44599999999997 milliseconds.
-==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> app: 12:15:37 PM: The rsync operation completed in 304.508 milliseconds.
-==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> api: 12:15:38 PM: The rsync operation completed in 309.545 milliseconds.
-==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> test: 12:15:38 PM: The rsync operation completed in 308.94899999999996 milliseconds.
-==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> app: 12:17:27 PM: The rsync operation completed in 312.465 milliseconds.
-==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> api: 12:17:27 PM: The rsync operation completed in 285.704 milliseconds.
-==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> test: 12:17:28 PM: The rsync operation completed in 296.692 milliseconds.
-==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> app: 12:17:30 PM: The rsync operation completed in 294.59000000000003 milliseconds.
-==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> api: 12:17:30 PM: The rsync operation completed in 305.544 milliseconds.
-==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> test: 12:17:30 PM: The rsync operation completed in 306.045 milliseconds.
-==> app: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> app:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> app: 12:17:37 PM: The rsync operation completed in 296.041 milliseconds.
-==> api: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> api:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> api: 12:17:37 PM: The rsync operation completed in 288.46 milliseconds.
-==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
-==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> test: 12:17:38 PM: The rsync operation completed in 298.633 milliseconds.
-/opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/driver/base.rb:404:in `block in execute': There was an error while executing `VBoxManage`, a CLI used by Vagrant (Vagrant::Errors::VBoxManageError)
-for controlling VirtualBox. The command and stderr is shown below.
-
-Command: ["showvminfo", "6eab1c52-96e7-4487-9c2c-8f7f567413c7", "--machinereadable"]
-
-Stderr: VBoxManage: error: Could not find a registered machine with UUID {6eab1c52-96e7-4487-9c2c-8f7f567413c7}
-VBoxManage: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee nsISupports
-VBoxManage: error: Context: "FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())" at line 2780 of file VBoxManageInfo.cpp
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/util/retryable.rb:17:in `retryable'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/driver/base.rb:362:in `execute'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/driver/version_5_1.rb:549:in `read_state'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/provider.rb:97:in `state'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/provider.rb:69:in `ssh_info'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/machine.rb:426:in `ssh_info'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:141:in `block (2 levels) in callback'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:140:in `each'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:140:in `block in callback'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:139:in `each'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:139:in `callback'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:47:in `call'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:47:in `block in run'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:31:in `loop'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:31:in `run'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:94:in `execute'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/cli.rb:42:in `execute'
-	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/environment.rb:302:in `cli'
-	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/action/startup_rsync.rb:40:in `block in call'
-==> api: Vagrant's startup was interrupted by an exception.
+The provider for this Vagrant-managed machine is reporting that it
+is not yet ready for SSH. Depending on your provider this can carry
+different meanings. Make sure your machine is created and running and
+try again. Additionally, check the output of `vagrant status` to verify
+that the machine is in the state that you expect. If you continue to
+get this error message, please view the documentation for the provider
+you're using.
+==> test: The previous process exited with exit code 1.
+==> api: The previous process exited with exit code 1.
 ==> app: The previous process exited with exit code 1.
