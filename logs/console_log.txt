@@ -300,3 +300,32 @@ Bringing machine 'test' up with 'virtualbox' provider...
 ==> test: Rsyncing folder: /Users/mom24/rag-dashboard/deploy/ => /sync
 ==> test:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
 ==> test: 12:17:38 PM: The rsync operation completed in 298.633 milliseconds.
+/opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/driver/base.rb:404:in `block in execute': There was an error while executing `VBoxManage`, a CLI used by Vagrant (Vagrant::Errors::VBoxManageError)
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["showvminfo", "6eab1c52-96e7-4487-9c2c-8f7f567413c7", "--machinereadable"]
+
+Stderr: VBoxManage: error: Could not find a registered machine with UUID {6eab1c52-96e7-4487-9c2c-8f7f567413c7}
+VBoxManage: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee nsISupports
+VBoxManage: error: Context: "FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())" at line 2780 of file VBoxManageInfo.cpp
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/util/retryable.rb:17:in `retryable'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/driver/base.rb:362:in `execute'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/driver/version_5_1.rb:549:in `read_state'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/provider.rb:97:in `state'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/plugins/providers/virtualbox/provider.rb:69:in `ssh_info'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/machine.rb:426:in `ssh_info'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:141:in `block (2 levels) in callback'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:140:in `each'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:140:in `block in callback'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:139:in `each'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:139:in `callback'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:47:in `call'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:47:in `block in run'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:31:in `loop'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/listen/listenosx.rb:31:in `run'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/command/rsync_auto.rb:94:in `execute'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/cli.rb:42:in `execute'
+	from /opt/vagrant/embedded/gems/gems/vagrant-1.8.5/lib/vagrant/environment.rb:302:in `cli'
+	from /Users/mom24/.vagrant.d/gems/gems/vagrant-gatling-rsync-0.9.0/lib/vagrant-gatling-rsync/action/startup_rsync.rb:40:in `block in call'
+==> api: Vagrant's startup was interrupted by an exception.
+==> app: The previous process exited with exit code 1.
