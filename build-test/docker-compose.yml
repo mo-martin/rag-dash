@@ -1,4 +1,0 @@
-test:
-  build: docker-test
-  volumes:
-    - /sync/build-test/docker-test/test:/test

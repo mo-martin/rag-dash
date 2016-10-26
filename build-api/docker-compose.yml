@@ -1,6 +1,0 @@
-api:
-  build: docker-api
-  ports:
-    - "3080:3080"
-  volumes:
-    - /sync/build-api/docker-api/app:/app

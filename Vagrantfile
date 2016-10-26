@@ -18,7 +18,7 @@ config.vm.define "app" do |app|
   app.vm.provision :docker
   # when running docker compose always rebuild and run
   app.vm.provision :docker_compose,
-    yml: "/sync/build-app/docker-compose.yml",
+    yml: "/sync/docker-compose.yml",
     rebuild: true,
     run: "always"
   # Start automatically Syncing
@@ -39,7 +39,7 @@ config.vm.define "api" do |api|
   api.vm.provision :docker
   # when running docker compose always rebuild and run
   api.vm.provision :docker_compose,
-    yml: "/sync/build-api/docker-compose.yml",
+    yml: "/sync/docker-compose.yml",
     rebuild: true,
     run: "always"
   # Start automatically Syncing

@@ -1,6 +1,0 @@
-app:
-  build: docker-app
-  ports:
-    - "8000:8000"
-  volumes:
-    - /sync/build-app/docker-app/app:/app

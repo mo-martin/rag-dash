@@ -1,0 +1,16 @@
+app:
+  build: build-app
+  ports:
+    - "8000:8000"
+  volumes:
+    - /sync/build-app/app:/app
+api:
+  build: build-api
+  ports:
+    - "3080:3080"
+  volumes:
+    - /sync/build-api/app:/app
+#test:
+#  build: build-test
+#  volumes:
+#    - /sync/build-test/test:/test
