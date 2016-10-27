@@ -1,12 +1,12 @@
 Bringing machine 'app' up with 'virtualbox' provider...
 Bringing machine 'api' up with 'virtualbox' provider...
 ==> app: Importing base box 'bento/ubuntu-16.04'...
-[KProgress: 10%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> app: Matching MAC address for NAT networking...
+[KProgress: 10%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> app: Matching MAC address for NAT networking...
 ==> app: Checking if box 'bento/ubuntu-16.04' is up to date...
 ==> app: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
 ==> app: have version '2.2.9'. The latest is version '2.3.0'. Run
 ==> app: `vagrant box update` to update.
-==> app: Setting the name of the VM: rag-dashboard_app_1477497029876_8210
+==> app: Setting the name of the VM: rag-dashboard_app_1477558985141_52109
 ==> app: Clearing any previously set network interfaces...
 ==> app: Preparing network interfaces based on configuration...
     app: Adapter 1: nat
@@ -47,54 +47,10 @@ Bringing machine 'api' up with 'virtualbox' provider...
     app: Installing Docker Compose 1.8.0
     app: Symlinking Docker Compose 1.8.0
     app: Running docker-compose rm...
-==> app: mesg: 
-==> app: ttyname failed
-==> app: : 
-==> app: Inappropriate ioctl for device
+==> app: mesg: ttyname failed: Inappropriate ioctl for device
     app: No stopped containers
     app: Running docker-compose build...
 ==> app: mesg: ttyname failed: Inappropriate ioctl for device
 ==> app: Building app
     app: Step 1 : FROM node:6
     app: 6: Pulling from library/node
-    app: Digest: sha256:57ca6f5fa900ea778394e857c6b1ed37437a526ab54b2fdc41605419ade1a5e7
-    app: Status: Downloaded newer image for node:6
-    app:  ---> ebf2f43db9c3
-    app: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    app:  ---> Running in d7bea14e2c9b
-    app:  ---> c000795ccd76
-    app: Removing intermediate container d7bea14e2c9b
-    app: Step 3 : WORKDIR /app
-    app:  ---> Running in 2ada80de2bf3
-    app:  ---> 7735392d3ca2
-    app: Removing intermediate container 2ada80de2bf3
-    app: Step 4 : COPY app/ .
-==> app: Service 'app' failed to build: lstat app/: no such file or directory
-The following SSH command responded with a non-zero exit status.
-Vagrant assumes that this means the command failed!
-
- /usr/local/bin/docker-compose-1.8.0  -f "/sync/docker-compose.yml" build 
-
-Stdout from the command:
-
-Step 1 : FROM node:6
-6: Pulling from library/node
-Digest: sha256:57ca6f5fa900ea778394e857c6b1ed37437a526ab54b2fdc41605419ade1a5e7
-Status: Downloaded newer image for node:6
- ---> ebf2f43db9c3
-Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
- ---> Running in d7bea14e2c9b
- ---> c000795ccd76
-Removing intermediate container d7bea14e2c9b
-Step 3 : WORKDIR /app
- ---> Running in 2ada80de2bf3
- ---> 7735392d3ca2
-Removing intermediate container 2ada80de2bf3
-Step 4 : COPY app/ .
-
-
-Stderr from the command:
-
-mesg: ttyname failed: Inappropriate ioctl for device
-Building app
-Service 'app' failed to build: lstat app/: no such file or directory
