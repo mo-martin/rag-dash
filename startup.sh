@@ -14,4 +14,3 @@ vagrant up 2>&1 | tee logs/console_log.txt
         echo "The script has not run."
     fi
   fi
-nohup vagrant gatling-rsync-auto > /dev/null 2>&1 &

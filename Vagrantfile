@@ -22,7 +22,7 @@ config.vm.define "localvm" do |localvm|
     rebuild: true,
     run: "always"
   # Start automatically Syncing
-  localvm.gatling.rsync_on_startup = false
+  localvm.gatling.rsync_on_startup = true
   # forward ports
   localvm.vm.network "forwarded_port", guest:8000, host:8000
   localvm.vm.network "forwarded_port", guest:3080, host:3080
