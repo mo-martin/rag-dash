@@ -25,6 +25,6 @@ config.vm.define "localvm" do |localvm|
   localvm.gatling.rsync_on_startup = true
   # forward ports
   localvm.vm.network "forwarded_port", guest:8000, host:8000
-  localvm.vm.network "forwarded_port", guest:3080, host:3080
+  localvm.vm.network "forwarded_port", guest:8083, host:8083
 end
 end

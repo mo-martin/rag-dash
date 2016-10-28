@@ -1,13 +1,13 @@
 app:
-  build: build-app
+  build: ./build-app
   ports:
     - "8000:80"
   volumes:
     - /sync/build-app/app:/usr/share/nginx/html
 api:
-  build: build-api
+  build: ./build-api
   ports:
-    - "3080:3080"
+    - "8083:8083"
   volumes:
     - /sync/build-api/app:/app
 #test:
