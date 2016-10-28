@@ -1,0 +1,122 @@
+Bringing machine 'localvm' up with 'virtualbox' provider...
+==> localvm: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> localvm: Matching MAC address for NAT networking...
+==> localvm: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> localvm: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
+==> localvm: have version '2.2.9'. The latest is version '2.3.0'. Run
+==> localvm: `vagrant box update` to update.
+==> localvm: Setting the name of the VM: rag-dashboard_localvm_1477653585908_92842
+==> localvm: Clearing any previously set network interfaces...
+==> localvm: Preparing network interfaces based on configuration...
+    localvm: Adapter 1: nat
+==> localvm: Forwarding ports...
+    localvm: 8000 (guest) => 8000 (host) (adapter 1)
+    localvm: 8083 (guest) => 8083 (host) (adapter 1)
+    localvm: 22 (guest) => 2222 (host) (adapter 1)
+==> localvm: Running 'pre-boot' VM customizations...
+==> localvm: Booting VM...
+==> localvm: Waiting for machine to boot. This may take a few minutes...
+    localvm: SSH address: 127.0.0.1:2222
+    localvm: SSH username: vagrant
+    localvm: SSH auth method: private key
+    localvm: 
+    localvm: Vagrant insecure key detected. Vagrant will automatically replace
+    localvm: this with a newly generated keypair for better security.
+    localvm: 
+    localvm: Inserting generated public key within guest...
+    localvm: Removing insecure key from the guest if it's present...
+    localvm: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> localvm: Machine booted and ready!
+==> localvm: Checking for guest additions in VM...
+    localvm: The guest additions on this VM do not match the installed version of
+    localvm: VirtualBox! In most cases this is fine, but in rare cases it can
+    localvm: prevent things such as shared folders from working properly. If you see
+    localvm: shared folder errors, please make sure the guest additions within the
+    localvm: virtual machine match the version of VirtualBox you have installed on
+    localvm: your host and reload your VM.
+    localvm: 
+    localvm: Guest Additions Version: 5.0.26
+    localvm: VirtualBox Version: 5.1
+==> localvm: Setting hostname...
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm: Running provisioner: docker...
+    localvm: Installing Docker onto machine...
+==> localvm: Running provisioner: docker_compose...
+    localvm: Checking for Docker Compose installation...
+    localvm: Installing Docker Compose 1.8.0
+    localvm: Symlinking Docker Compose 1.8.0
+    localvm: Running docker-compose rm...
+==> localvm: mesg: ttyname failed: Inappropriate ioctl for device
+    localvm: No stopped containers
+    localvm: Running docker-compose build...
+==> localvm: mesg: ttyname failed: Inappropriate ioctl for device
+==> localvm: Building app
+    localvm: Step 1 : FROM nginx
+    localvm: latest: Pulling from library/nginx
+    localvm: Digest: sha256:dedbce721065b2bcfae35d2b0690857bb6c3b4b7dd48bfe7fc7b53693731beff
+    localvm: Status: Downloaded newer image for nginx:latest
+    localvm:  ---> e43d811ce2f4
+    localvm: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
+    localvm:  ---> Running in 3b4908eb286f
+    localvm:  ---> 8ecedc6fa6bb
+    localvm: Removing intermediate container 3b4908eb286f
+    localvm: Step 3 : WORKDIR /app
+    localvm:  ---> Running in 918a5d760b6f
+    localvm:  ---> b76eec7f91eb
+    localvm: Removing intermediate container 918a5d760b6f
+    localvm: Step 4 : COPY app/ /usr/share/nginx/html
+    localvm:  ---> fc9160e5d990
+    localvm: Removing intermediate container 9225af42c35d
+    localvm: Step 5 : EXPOSE 8000
+    localvm:  ---> Running in 90326e685ca8
+    localvm:  ---> d6c8847ab64b
+    localvm: Removing intermediate container 90326e685ca8
+    localvm: Successfully built d6c8847ab64b
+==> localvm: Building api
+    localvm: Step 1 : FROM node:6
+    localvm: 6: Pulling from library/node
+    localvm: Digest: sha256:57ca6f5fa900ea778394e857c6b1ed37437a526ab54b2fdc41605419ade1a5e7
+    localvm: Status: Downloaded newer image for node:6
+    localvm:  ---> ebf2f43db9c3
+    localvm: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
+    localvm:  ---> Running in 5c423420fbe3
+    localvm:  ---> 2a40d7085854
+    localvm: Removing intermediate container 5c423420fbe3
+    localvm: Step 3 : WORKDIR /app
+    localvm:  ---> Running in 5b4d61a8eafe
+    localvm:  ---> bbdf37a8cbfb
+    localvm: Removing intermediate container 5b4d61a8eafe
+    localvm: Step 4 : COPY app/ .
+    localvm:  ---> d9eeba5292bf
+    localvm: Removing intermediate container 3905de1526a6
+    localvm: Step 5 : CMD node /app/app.js
+    localvm:  ---> Running in 2f5cb25818ec
+    localvm:  ---> 283097db19f9
+    localvm: Removing intermediate container 2f5cb25818ec
+    localvm: Step 6 : EXPOSE 8083
+    localvm:  ---> Running in 56412fefd9b0
+    localvm:  ---> 61786a86ef9b
+    localvm: Removing intermediate container 56412fefd9b0
+    localvm: Successfully built 61786a86ef9b
+    localvm: Running docker-compose up...
+==> localvm: mesg: ttyname failed: Inappropriate ioctl for device
+==> localvm: Creating sync_app_1
+==> localvm: Creating sync_api_1
+==> localvm: vagrant-gatling-rsync is starting the sync engine because you have at least one rsync folder. To disable this behavior, set `config.gatling.rsync_on_startup = false` in your Vagrantfile.
+==> localvm: Doing an initial rsync...
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm: Watching: /Users/mom24/rag-dashboard/rag-dashboard
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm: 12:23:52 PM: The rsync operation completed in 299.62 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm: 12:23:54 PM: The rsync operation completed in 311.76 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm: 12:24:23 PM: The rsync operation completed in 310.112 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm: 12:24:40 PM: The rsync operation completed in 314.831 milliseconds.

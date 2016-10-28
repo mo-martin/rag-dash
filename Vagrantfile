@@ -12,7 +12,7 @@ config.vm.define "localvm" do |localvm|
   # Use rsync to sync to vagrant and then to docker
   localvm.vm.synced_folder ".", "/sync", type: "rsync",
   rsync__exclude: [
-    '.git', 'node_modules', '.vagrant'
+    '.git', '.vagrant'
   ]
   # provision with docker and docker-compose
   localvm.vm.provision :docker
