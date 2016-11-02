@@ -1,11 +1,11 @@
 Bringing machine 'localvm' up with 'virtualbox' provider...
 ==> localvm: Importing base box 'bento/ubuntu-16.04'...
-[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> localvm: Matching MAC address for NAT networking...
+[KProgress: 10%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> localvm: Matching MAC address for NAT networking...
 ==> localvm: Checking if box 'bento/ubuntu-16.04' is up to date...
 ==> localvm: A newer version of the box 'bento/ubuntu-16.04' is available! You currently
 ==> localvm: have version '2.2.9'. The latest is version '2.3.0'. Run
 ==> localvm: `vagrant box update` to update.
-==> localvm: Setting the name of the VM: rag-dashboard_localvm_1477653585908_92842
+==> localvm: Setting the name of the VM: rag-dashboard_localvm_1477992013160_34068
 ==> localvm: Clearing any previously set network interfaces...
 ==> localvm: Preparing network interfaces based on configuration...
     localvm: Adapter 1: nat
@@ -39,7 +39,7 @@ Bringing machine 'localvm' up with 'virtualbox' provider...
     localvm: VirtualBox Version: 5.1
 ==> localvm: Setting hostname...
 ==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
-==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
 ==> localvm: Running provisioner: docker...
     localvm: Installing Docker onto machine...
 ==> localvm: Running provisioner: docker_compose...
@@ -58,65 +58,143 @@ Bringing machine 'localvm' up with 'virtualbox' provider...
     localvm: Status: Downloaded newer image for nginx:latest
     localvm:  ---> e43d811ce2f4
     localvm: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    localvm:  ---> Running in 3b4908eb286f
-    localvm:  ---> 8ecedc6fa6bb
-    localvm: Removing intermediate container 3b4908eb286f
+    localvm:  ---> Running in 26b02c985324
+    localvm:  ---> cc91e77c9407
+    localvm: Removing intermediate container 26b02c985324
     localvm: Step 3 : WORKDIR /app
-    localvm:  ---> Running in 918a5d760b6f
-    localvm:  ---> b76eec7f91eb
-    localvm: Removing intermediate container 918a5d760b6f
+    localvm:  ---> Running in 5c1077aa50c2
+    localvm:  ---> 815fa3d6fa98
+    localvm: Removing intermediate container 5c1077aa50c2
     localvm: Step 4 : COPY app/ /usr/share/nginx/html
-    localvm:  ---> fc9160e5d990
-    localvm: Removing intermediate container 9225af42c35d
+    localvm:  ---> 19b9dc691b58
+    localvm: Removing intermediate container adf81bfabfe4
     localvm: Step 5 : EXPOSE 8000
-    localvm:  ---> Running in 90326e685ca8
-    localvm:  ---> d6c8847ab64b
-    localvm: Removing intermediate container 90326e685ca8
-    localvm: Successfully built d6c8847ab64b
+    localvm:  ---> Running in 4c6829fd9afd
+    localvm:  ---> 64642b361ec2
+    localvm: Removing intermediate container 4c6829fd9afd
+    localvm: Successfully built 64642b361ec2
 ==> localvm: Building api
     localvm: Step 1 : FROM node:6
     localvm: 6: Pulling from library/node
-    localvm: Digest: sha256:57ca6f5fa900ea778394e857c6b1ed37437a526ab54b2fdc41605419ade1a5e7
+    localvm: Digest: sha256:4420f57e4c2d9f2d9a3c5d81d5768d3c175d91c027a2c5043ff70c8a0d9662d9
     localvm: Status: Downloaded newer image for node:6
-    localvm:  ---> ebf2f43db9c3
+    localvm:  ---> d49dc03507fa
     localvm: Step 2 : MAINTAINER moses.martin@skybettingandgaming.com
-    localvm:  ---> Running in 5c423420fbe3
-    localvm:  ---> 2a40d7085854
-    localvm: Removing intermediate container 5c423420fbe3
+    localvm:  ---> Running in 9902351279f4
+    localvm:  ---> 7cc5f5657bd8
+    localvm: Removing intermediate container 9902351279f4
     localvm: Step 3 : WORKDIR /app
-    localvm:  ---> Running in 5b4d61a8eafe
-    localvm:  ---> bbdf37a8cbfb
-    localvm: Removing intermediate container 5b4d61a8eafe
+    localvm:  ---> Running in 63e4f29c190f
+    localvm:  ---> d39e518580d2
+    localvm: Removing intermediate container 63e4f29c190f
     localvm: Step 4 : COPY app/ .
-    localvm:  ---> d9eeba5292bf
-    localvm: Removing intermediate container 3905de1526a6
+    localvm:  ---> 14b99121a1a6
+    localvm: Removing intermediate container a5524510f7e3
     localvm: Step 5 : CMD node /app/app.js
-    localvm:  ---> Running in 2f5cb25818ec
-    localvm:  ---> 283097db19f9
-    localvm: Removing intermediate container 2f5cb25818ec
+    localvm:  ---> Running in 3f469bf47fd7
+    localvm:  ---> 7d83c173500d
+    localvm: Removing intermediate container 3f469bf47fd7
     localvm: Step 6 : EXPOSE 8083
-    localvm:  ---> Running in 56412fefd9b0
-    localvm:  ---> 61786a86ef9b
-    localvm: Removing intermediate container 56412fefd9b0
-    localvm: Successfully built 61786a86ef9b
+    localvm:  ---> Running in 5ebd7dcf6269
+    localvm:  ---> 97b9376643f0
+    localvm: Removing intermediate container 5ebd7dcf6269
+    localvm: Successfully built 97b9376643f0
     localvm: Running docker-compose up...
 ==> localvm: mesg: ttyname failed: Inappropriate ioctl for device
-==> localvm: Creating sync_app_1
 ==> localvm: Creating sync_api_1
+==> localvm: Creating sync_app_1
 ==> localvm: vagrant-gatling-rsync is starting the sync engine because you have at least one rsync folder. To disable this behavior, set `config.gatling.rsync_on_startup = false` in your Vagrantfile.
 ==> localvm: Doing an initial rsync...
 ==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
-==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
 ==> localvm: Watching: /Users/mom24/rag-dashboard/rag-dashboard
 ==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
-==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> localvm: 12:23:52 PM: The rsync operation completed in 299.62 milliseconds.
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:29:49 AM: The rsync operation completed in 426.40099999999995 milliseconds.
 ==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
-==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> localvm: 12:23:54 PM: The rsync operation completed in 311.76 milliseconds.
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:29:54 AM: The rsync operation completed in 494.973 milliseconds.
 ==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
-==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> localvm: 12:24:23 PM: The rsync operation completed in 310.112 milliseconds.
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:33:13 AM: The rsync operation completed in 468.284 milliseconds.
 ==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
-==> localvm:   - Exclude: [".vagrant/", ".git", "node_modules", ".vagrant"]
-==> localvm: 12:24:40 PM: The rsync operation completed in 314.831 milliseconds.
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:42:38 AM: The rsync operation completed in 434.743 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:44:49 AM: The rsync operation completed in 445.37399999999997 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:44:54 AM: The rsync operation completed in 436.44699999999995 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:45:03 AM: The rsync operation completed in 441.501 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:45:30 AM: The rsync operation completed in 445.803 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:45:47 AM: The rsync operation completed in 415.164 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:46:04 AM: The rsync operation completed in 454.062 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:47:24 AM: The rsync operation completed in 445.132 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:47:45 AM: The rsync operation completed in 446.774 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:48:00 AM: The rsync operation completed in 436.517 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:49:50 AM: The rsync operation completed in 453.297 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:50:04 AM: The rsync operation completed in 454.991 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:50:06 AM: The rsync operation completed in 490.724 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:51:10 AM: The rsync operation completed in 425.17100000000005 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:52:46 AM: The rsync operation completed in 428.453 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 09:53:29 AM: The rsync operation completed in 434.391 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 11:32:45 AM: The rsync operation completed in 454.369 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 11:32:48 AM: The rsync operation completed in 457.90999999999997 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 11:32:58 AM: The rsync operation completed in 482.966 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 11:33:00 AM: The rsync operation completed in 443.839 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 11:34:23 AM: The rsync operation completed in 444.914 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 03:58:25 PM: The rsync operation completed in 775.908 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 03:58:55 PM: The rsync operation completed in 471.718 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 03:59:06 PM: The rsync operation completed in 426.333 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 03:59:54 PM: The rsync operation completed in 420.645 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 04:00:02 PM: The rsync operation completed in 432.817 milliseconds.
+==> localvm: Rsyncing folder: /Users/mom24/rag-dashboard/rag-dashboard/ => /sync
+==> localvm:   - Exclude: [".vagrant/", ".git", ".vagrant"]
+==> localvm: 04:00:26 PM: The rsync operation completed in 474.693 milliseconds.
