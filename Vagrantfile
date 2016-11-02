@@ -26,5 +26,10 @@ config.vm.define "localvm" do |localvm|
   # forward ports
   localvm.vm.network "forwarded_port", guest:8000, host:8000
   localvm.vm.network "forwarded_port", guest:8083, host:8083
+  localvm.vm.network "forwarded_port", guest:80, host:80
+  localvm.vm.network "forwarded_port", guest:2003-2004, host:2003-2004
+  localvm.vm.network "forwarded_port", guest:2023-2024, host:2023-2024
+  localvm.vm.network "forwarded_port", guest:8125-8126, host:8125-8126
+
 end
 end
